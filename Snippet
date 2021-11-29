@@ -1,0 +1,2832 @@
+# # # # # import numpy as np
+# # # # # import cv2 as cv
+# # # # # from numpy.lib.function_base import sort_complex
+
+# # # # # array=np.array([1,2,3])
+# # # # # print(array)
+# # # # # print(np.__version__)
+# # # # # arrayv=np.array([[1],[2],[3]])
+# # # # # print(arrayv)
+# # # # # arrayvv=np.array([(1,2,3),(5,6,7)])
+# # # # # print(arrayvv)
+# # # # # arrayvvv=np.array([[[1,2,3],[4,5,6],[1,2,3],[4,5,6]]])
+# # # # # print(arrayvvv)
+# # # # # arrayvvvv=np.array([[(1,2,3),(3,4,5)],[(1,2,3),(3,4,5)]])
+# # # # # print(arrayvvvv)
+# # # # # arr=np.zeros((3,3),dtype=np.uint8)
+# # # # # print(arr)
+# # # # # ar=np.ones((3,5),dtype=np.uint8)
+# # # # # print(ar)
+# # # # # a=np.full((3,5),5)
+# # # # # print(a)
+# # # # # b=np.eye(3)
+# # # # # print(b)
+# # # # # arange=np.arange(0, 10,2)
+# # # # # print(arange)
+# # # # # lins=np.linspace(0,2,9)
+# # # # # print(lins)
+# # # # # ran=np.random.rand(2,3)
+# # # # # print(ran)
+# # # # # randint=np.random.randint(5,size=(3,3))
+# # # # # print(randint)
+# # # # # arrrrrr=np.array([(1,2,3),(2,2,3)])
+# # # # # print(arrrrrr.shape)
+# # # # # print(arrrrrr.size)
+# # # # # print(arrrrrr.dtype)
+# # # # # arr1=arrrrrr.astype(float)
+# # # # # print(arr1.dtype)
+# # # # # arrrr=arrrrrr+arr1
+# # # # # print(arrrr)
+
+# # # # # a1=np.array([[1,2,3,4],[4,5,6,14]])
+# # # # # print(a1)
+# # # # # print(a1[1][1])
+# # # # # print(a1[:,0])
+# # # # # print(a1[0,1:])
+# # # # # print(a1[0,:2])
+# # # # # print(a1[0,1:3])
+
+# # # # # arr11=a1.reshape(1,8)
+# # # # # print(arr11)
+
+
+# # # # # ar111=np.array([1,2,3])
+# # # # # ar2=np.array([1,2,3])
+# # # # # print(np.concatenate((ar111,ar2)))
+# # # # # print(np.transpose(ar111))
+
+
+
+
+# # # # # imag=np.zeros((256,256),dtype=np.uint8)
+# # # # # imag[:,:]=100
+# # # # # imag=imag[:,:]+10
+
+
+
+# # # # # imag[100:200,200:256]=255
+
+# # # # # cv.imwrite("sample.jpg",imag)
+# # # # # cv.imshow("img",imag)
+# # # # # cv.waitKey(0)
+
+
+
+# # # # # img=cv.imread("python\RGB.jpg",cv.IMREAD_GRAYSCALE)
+# # # # # cv.imshow("im",img)
+# # # # # cv.waitKey(0)
+
+
+
+# # # # # cap=cv.VideoCapture(0)
+# # # # # opened=cap.isOpened()
+# # # # # height=cap.get(cv.CAP_PROP_FRAME_HEIGHT)
+# # # # # width=cap.get(cv.CAP_PROP_FRAME_WIDTH)
+# # # # # f=cap.get(cv.CAP_PROP_FPS)
+# # # # # print(height)
+# # # # # print(width)
+# # # # # print("frames {}".format(f))
+
+
+
+
+# # # # # fourcc=cv.VideoWriter_fourcc(*'MJPG')
+# # # # # out=cv.VideoWriter("ki.avi",fourcc,f,(int(width),int(height)))
+# # # # # if(opened):
+# # # # #     while(cap.isOpened):
+# # # # #         ret,frame=cap.read()
+# # # # #         if(ret==True):
+
+# # # # #             cv.imshow("im",frame)
+# # # # #             if (cv.waitKey(2)==27):
+# # # # #                 break
+
+
+
+# # # # # out.release()
+# # # # # cap.release()
+# # # # # cv.destroyAllWindows()
+
+
+
+# # # # # c=cv.VideoCapture(0)
+
+
+
+# # # # # fourc=cv.VideoWriter_fourcc(*"MJPG")
+# # # # # vid=cv.VideoWriter("ki.avi",fourc,f,(int(height),int(width)))
+# # # # # open=c.isOpened()
+# # # # # if(open):
+# # # # #     while(c.isOpened()):
+# # # # #         ret,fr=c.read()
+# # # # #         gray=cv.cvtColor(fr,cv.COLOR_BGR2RGB)
+# # # # #         if(ret==True):
+# # # # #             cv.imshow("im",gray)
+# # # # #             if(cv.waitKey(2)==27):
+# # # # #                 break
+
+
+
+# # # # # c.release()
+# # # # # cv.destroyAllWindows()
+
+
+
+# # # # # capture=cv.VideoCapture(0)
+# # # # # print(capture.get(cv.CAP_PROP_FRAME_HEIGHT))
+# # # # # print(capture.get(cv.CAP_PROP_FRAME_WIDTH))
+# # # # # frames=print(capture.get(cv.CAP_PROP_FRAME_COUNT))
+# # # # # four=cv.VideoWriter_fourcc(*"MJPG")
+# # # # # p=cv.VideoWriter("ji.avi",four,f,(int(height),int(width)))
+# # # # # framei=frames-1
+# # # # # op=capture.isOpened()
+# # # # # if(op):
+# # # # #     while(framei!=0):
+# # # # #         ret,frm=capture.read()
+# # # # #         if(ret==True):
+# # # # #             cv.imshow("im",frm)
+# # # # #             if(cv.waitKey(2)==27):
+# # # # #                 break
+
+
+# # # # # canavas=np.zeros((500,500,3))
+# # # # # l=cv.line(canavas,(255,255),(500,500),(255,0,0),1,cv.LINE_4)
+# # # # # b=cv.line(canavas,(300,300),(500,500),(0,255,0),1,cv.LINE_AA)
+# # # # # m=cv.line(canavas,(2400,400),(500,500),(0,0,255),1,cv.LINE_8)
+# # # # # r=cv.rectangle(canavas,(400,400),(500,500),(0,255,255),-1)
+# # # # # ci=cv.circle(canavas,(0,0),7,(255,0,0),-1)
+
+# # # # # cv.imshow("im",canavas)
+# # # # # cv.waitKey(0)
+
+
+
+# # # # # image=cv.imread("python\istockphoto-185284489-612x612.jpg")
+
+# # # # # imgresize=cv.resize(image,None,fx=2,fy=2,interpolation=cv.INTER_LINEAR)
+# # # # # cv.imshow("imgresize",imgresize)
+# # # # # imresize1=cv.resize(image,None,fx=2,fy=2,interpolation=cv.INTER_CUBIC)
+# # # # # cv.imshow("imgresize1",imresize1)
+
+
+# # # # # cv.imshow("im",image)
+
+# # # # # matrix=np.float32([[1,0,100],[0,1,100]])
+
+# # # # # warp=cv.warpAffine(image,matrix,(image.shape[1]+100,image.shape[0]+100))
+# # # # # cv.imshow("translational",warp)
+
+# # # # # mat1=cv.getRotationMatrix2D((200,200),10,1)
+# # # # # warp1=cv.warpAffine(image,mat1,(500,500))
+# # # # # cv.imshow("rot",warp1)
+# # # # # cv.waitKey(0)
+
+
+
+# # # # # import cv2 as cv
+# # # # # import numpy as np
+# # # # # i=cv.imread("python\RGB.jpg")
+# # # # # kernel=np.array([[0,0,0],[0,1,0],[0,0,0]])
+# # # # # kernel3=np.ones((3,3),dtype=np.float32)/9
+# # # # # kernel5=np.ones((11,11),dtype=np.float32)/121
+
+
+
+# # # # # blur=cv.filter2D(i,-1,kernel)
+# # # # # blur1=cv.filter2D(i,-1,kernel3)
+# # # # # blur2=cv.filter2D(i,-1,kernel5)
+# # # # # cv.imshow("blur",blur)
+# # # # # cv.imshow("blur1",blur1)
+# # # # # cv.imshow("blur2",blur2)
+# # # # # cv.waitKey(0)
+
+
+
+# # # # # import cv2 as cv 
+# # # # # import numpy as np
+
+# # # # # imgbeforemotionblur=cv.imread("python\RGB.jpg")
+# # # # # k=np.zeros((15,15),dtype=np.uint8)
+# # # # # k[int(15/2),:]=np.ones((1,1))
+# # # # # output=cv.filter2D(imgbeforemotionblur,-1,k)
+# # # # # cv.imshow("output",output)
+# # # # # cv.waitKey(0)
+
+
+
+# # # # # import cv2 as cv
+# # # # # import numpy as np
+
+# # # # # imagebefore=cv.imread("python\spacegame.png")
+# # # # # kernelblur=np.ones((15,15),dtype=np.float32)/625
+# # # # # outputkernel=cv.filter2D(imagebefore,-1,kernelblur)
+# # # # # motionblur=np.zeros((15,15))
+# # # # # motionblur[15/2,:]=np.ones((15))
+# # # # # blu=cv.blur(imagebefore,(25,25))
+# # # # # gausianblur=cv.GaussianBlur(imagebefore,(5,5),0)
+
+
+# # # # # cv.imshow("outputkernel",outputkernel)
+# # # # # cv.imshow("motionblur",motionblur)
+# # # # # cv.imshow("blur",blu)
+# # # # # cv.imshow("gausian",gausianblur)
+# # # # # cv.waitKey(0)
+
+
+
+
+# # # # # import cv2 as cv
+# # # # # import numpy as np
+
+# # # # # imagebefore=cv.imread("python\lionel-messi-barcelona.jpg")
+# # # # # kernal_b=np.ones((5,5),dtype=np.float32)/25
+# # # # # outp=cv.filter2D(imagebefore,-1,kernal_b)
+# # # # # bl=cv.blur(imagebefore,(5,5))
+# # # # # box=cv.boxFilter(imagebefore,-1,(5,5),normalize=True)
+# # # # # gausian=cv.GaussianBlur(imagebefore,(5,5),0)
+# # # # # medianb=cv.medianBlur(imagebefore,5)
+# # # # # bilateral=cv.bilateralFilter(imagebefore,10,6,6)
+
+
+
+# # # # # cv.imshow("bilateral",bilateral)
+# # # # # cv.imshow("med",medianb)
+# # # # # cv.imshow("gau",gausian)
+# # # # # cv.imshow("box",box)
+# # # # # cv.imshow("blur",bl)
+# # # # # cv.imshow("out",outp)
+# # # # # cv.waitKey(0)
+
+
+
+
+# # # # # import cv2 as cv
+# # # # # import numpy as np
+
+
+
+
+# # # # # imgcolor=cv.imread("python\Free-Desktop-1080p-HD-Wallpaper-Nature.jpg")
+# # # # # imgresized=cv.resize(imgcolor,(512,512))
+
+# # # # # imgclear=cv.medianBlur(imgresized,3)
+# # # # # imgclear=cv.medianBlur(imgresized,3)
+# # # # # imgclear=cv.medianBlur(imgresized,3)
+
+# # # # # edgepre=cv.edgePreservingFilter(imgclear,sigma_s=5)
+
+# # # # # imgfilter=cv.bilateralFilter(imgclear,3,20,10)
+
+# # # # # for i in range(2):
+# # # # #     imgfilter=cv.bilateralFilter(imgclear,5,40,10)
+# # # # # for i in range(2):
+# # # # #     imgfilter=cv.bilateralFilter(imgclear,3,40,10)
+# # # # # for i in range(2):
+# # # # #     imgfilter=cv.bilateralFilter(imgclear,3,40,5)
+
+
+
+# # # # # gausianblurfor=cv.GaussianBlur(imgfilter,(7,7),2)
+# # # # # imagesharp=cv.addWeighted(imgfilter,1.5,gausianblurfor,-0.5,0)
+# # # # # imagesharp=cv.addWeighted(imgfilter,1.4,gausianblurfor,-0.2,10)
+
+# # # # # cv.imshow("watercolor",imagesharp)
+# # # # # # cv.imshow("Original",imgcolor)
+# # # # # cv.imshow("original",imgresized)
+# # # # # cv.waitKey(0)
+
+
+# # # # # import cv2 as cv
+# # # # # import numpy as np
+
+# # # # # def func(x):
+# # # # #     print(x)
+
+
+# # # # # imgggg=np.zeros((500,500,3),dtype=np.uint8)
+# # # # # cv.namedWindow("track")
+
+# # # # # cv.createTrackbar("b","track",0,255,func)
+# # # # # cv.createTrackbar("g","track",0,255,func)
+# # # # # cv.createTrackbar("r","track",0,255,func)
+
+# # # # # while(1):
+# # # # #     cv.imshow("track",imgggg)
+# # # # #     if(cv.waitKey(2)==27):
+# # # # #         break
+# # # # #     blue=cv.getTrackbarPos("b","track")
+# # # # #     green=cv.getTrackbarPos("g","track")
+# # # # #     red=cv.getTrackbarPos("r","track")
+
+# # # # #     imgggg[:]=[blue,green,red]
+
+# # # # # cv.destroyAllWindows()
+
+
+
+
+# # # # # import cv2 as cv
+# # # # # import numpy as np
+
+# # # # # capturedvi=cv.VideoCapture(0)
+# # # # # openedvif=capturedvi.isOpened()
+# # # # # if(openedvif):
+# # # # #     while(capturedvi.isOpened()):
+# # # # #         retre,eachframe=capturedvi.read()
+# # # # #         if(retre==True):
+# # # # #             eachframemedblur=cv.medianBlur(eachframe,5)
+# # # # #             eachframemedblur=cv.medianBlur(eachframe,5)
+# # # # #             eachframemedblur=cv.medianBlur(eachframe,5)
+
+# # # # #             edgepres=cv.edgePreservingFilter(eachframemedblur,sigma_s=5)
+# # # # #             eachframed=cv.bilateralFilter(edgepres,3,20,10)
+
+# # # # #             for i in range(2):
+# # # # #                 imgfilter=cv.bilateralFilter(eachframed,5,40,10)
+# # # # #             for i in range(2):
+# # # # #                 imgfilter=cv.bilateralFilter(eachframed,3,40,10)
+# # # # #             for i in range(2):
+# # # # #                 imgfilter=cv.bilateralFilter(eachframed,3,40,5)
+
+# # # # #             gausianblurforeachframed=cv.GaussianBlur(eachframed,(7,7),2)
+# # # # #             imagesharp=cv.addWeighted(imgfilter,1.5,gausianblurforeachframed,-0.5,0)
+# # # # #             imagesharp=cv.addWeighted(imgfilter,1.4,gausianblurforeachframed,-0.2,10)
+# # # # #             cv.imshow("img",imagesharp)
+# # # # #             if(cv.waitKey(2)==27):
+# # # # #                 break
+# # # # # capturedvi.release()            
+# # # # # cv.destroyAllWindows()
+
+# # # # # import cv2 as cv
+# # # # # import numpy as np
+# # # # # pic=np.zeros((521,521,3),dtype=np.uint8)
+# # # # # def mouse(event,x,y,flags,param):
+# # # # #     if(event==cv.EVENT_LBUTTONDOWN):
+# # # # #         cv.circle(pic,(x,y),90,(0,0,255),1)
+        
+
+# # # # # cv.imshow("image",pic)
+
+# # # # # cv.setMouseCallback("imgageeee",mouse)
+# # # # # cv.waitKey(0)
+# # # # # cv.destroyAllWindows
+
+
+# # # # # import cv2 as cv
+# # # # # import numpy as np
+
+# # # # # imagemorpho=cv.imread("python\sudoku-original.jpg",0)
+# # # # # ret,th=cv.threshold(imagemorpho,120,255,cv.THRESH_BINARY)
+# # # # # ker=np.ones((5,5),dtype=np.uint8)/25
+# # # # # dilation=cv.dilate(th,ker)
+# # # # # erosion=cv.erode(th,ker)
+# # # # # opening=cv.morphologyEx(th,cv.MORPH_OPEN,ker)
+# # # # # closing=cv.morphologyEx(th,cv.MORPH_CLOSE,ker)
+
+
+
+
+
+# # # # # cv.imshow("opening",opening)
+# # # # # cv.imshow("closing",closing)
+# # # # # cv.imshow("dl",dilation)
+# # # # # cv.imshow("er",erosion)
+# # # # # cv.waitKey(0)
+
+
+# # # # # import cv2 as cv
+# # # # # import numpy as np
+
+# # # # # board=np.zeros((500,500,3),dtype=np.uint8)
+# # # # # line=cv.line(board,(250,250),(500,500),(0,0,255),1,cv.LINE_4)
+# # # # # line=cv.line(board,(300,300),(500,500),(0,255,0),1,cv.LINE_AA)
+# # # # # line=cv.line(board,(400,400),(500,500),(255,0,0),1,cv.LINE_8)
+# # # # # circle=cv.circle(board,(250,250),90,(0,0,255),1)
+# # # # # arrow=cv.arrowedLine(board,(200,200),(400,400),(0,0,255),7,tipLength=6)
+# # # # # ellipse=cv.ellipse(board,(250,250),(200,200),0,0,180,255,1)
+
+# # # # # cv.imshow("im",board)
+# # # # # cv.waitKey(0)
+
+
+
+# # # # # # import cv2 as cv
+# # # # # # import numpy as np
+
+# # # # # # imgwarp=cv.imread("python\png-transparent-sprite-spacecraft-pixel-art-spaceship-computer-graphics-spacecraft-design-shooter-game.png")
+# # # # # # col,row=1000,1000
+# # # # # # pts=np.float32([[50,50],[200,30],[50,200]])
+# # # # # # pts1=np.float32([[50,69],[78,90],[98,78]])
+
+# # # # # # matrixxxx=cv.getAffineTransform(pts,pts1)
+# # # # # # lp=cv.warpAffine(imgwarp,matrixxxx,(col,row))
+# # # # # # cv.imshow("im",lp)
+# # # # # # cv.waitKey(0)
+
+
+# # # # # # import cv2 as cv
+# # # # # # import numpy as np
+
+# # # # # # imgpy=cv.imread("python\space-game-background_131928-19.jpg")
+# # # # # # imgpyup=cv.pyrUp(imgpy)
+# # # # # # cv.imshow("im",imgpyup)
+# # # # # # cv.waitKey(0)
+
+# # # # # # for i in range(5):
+# # # # # #     impyup=cv.pyrUp(imgpy)
+# # # # # #     cv.imshow("im",impyup)
+# # # # # #     cv.waitKey(0)
+
+
+
+# # # # # # import cv2 as cv
+# # # # # # import numpy as np
+# # # # # # framewidth,frameheight=512,512
+# # # # # # cap1=cv.VideoCapture(0)
+# # # # # # cap1.set(3,framewidth)
+# # # # # # cap1.set(4,frameheight)
+
+# # # # # # def nothing(x):
+# # # # # #     print(x)
+
+# # # # # # cv.createTrackbar("Hue_min","Trackbar",0,179,nothing)
+# # # # # # cv.createTrackbar("Hue_max","Trackbar",0,179,nothing)
+# # # # # # cv.createTrackbar("sat_min","Trackbar",110,255,nothing)
+# # # # # # cv.createTrackbar("sat_max","Trackbar",240,255,nothing)
+# # # # # # cv.createTrackbar("value_min","Trackbar",153,255,nothing)
+# # # # # # cv.createTrackbar("value_max","Trackbar",255,255,nothing)
+
+
+
+
+
+
+
+
+
+
+
+
+# # # # # # if(cap1.isOpened()):
+# # # # # #     while cap1.isOpened():
+# # # # # #         retreval,paintframe=cap1.read()
+# # # # # #         if (retreval==True):
+# # # # # #             cv.imshow("im",paintframe)
+# # # # # #             if(cv.waitKey(2)==27):
+# # # # # #                 break
+
+
+# # # # # #             hsv=cv.cvtColor(paintframe,cv.COLOR_BGR2HSV)
+# # # # # #             h_min=cv.getTrackbarPos("Hue_min","Trackbar")
+# # # # # #             h_max=cv.getTrackbarPos("Hue_min","Trackbar")
+# # # # # #             s_min=cv.getTrackbarPos("Hue_min","Trackbar")
+# # # # # #             s_max=cv.getTrackbarPos("Hue_min","Trackbar")
+# # # # # #             v_min=cv.getTrackbarPos("Hue_min","Trackbar")
+# # # # # #             v_max=cv.getTrackbarPos("Hue_min","Trackbar")
+
+# # # # # #             lower=np.array([h_min,s_min,v_min])
+# # # # # #             higher=np.array([h_max,s_max,v_max])
+# # # # # #             mmask=cv.inRange(hsv,lower,higher)
+            
+
+
+
+
+
+# # # # # # cap.release()
+# # # # # # cv.destroyAllWindows()
+
+
+
+
+# # # # # import numpy as np
+# # # # # import cv2 as cv
+
+
+
+
+# # # # # vigenette=cv.imread("python\Free-Desktop-1080p-HD-Wallpaper-Nature.jpg")
+# # # # # row,col=vigenette.shape[:2]
+# # # # # kernelforvigennetex=cv.getGaussianKernel(col,200)
+# # # # # kernelforvigennetey=cv.getGaussianKernel(row,200)
+# # # # # kernelforvigennete=kernelforvigennetey*kernelforvigennetex.T
+
+# # # # # kernelforvigennete=kernelforvigennete/np.linalg.norm(kernelforvigennete)
+
+# # # # # mask=255*kernelforvigennete
+# # # # # outputv=np.copy(vigenette)
+# # # # # for i in range(3):
+# # # # #     outputv[:,:,i]=outputv[:,:,i]*mask
+# # # # # cv.imshow("vig",outputv)
+# # # # # cv.waitKey(0)
+
+
+
+# # # # # import cv2 as cv
+# # # # # import numpy as np
+# # # # # #Trackbar handler
+# # # # # def changeRadius(value):
+# # # # # 	global radius
+# # # # # 	radius = value
+	
+
+# # # # # #For changing the focus of the mask 
+# # # # # def changeFocus(scope):
+# # # # # 	global value
+# # # # # 	value = scope
+
+
+
+
+
+# # # # # vige=cv.imread("python\WhatsApp Image 2021-08-15 at 3.04.23 PM.jpeg")
+# # # # # row,col=vige.shape[:2]
+
+# # # # # value=1
+# # # # # radius=130
+# # # # # mask=np.zeros((int(row*(value*0.1+1)),int(col*(value*0.1+1))))
+
+# # # # # cv.namedWindow("Trackbars")
+
+# # # # # cv.createTrackbar('Radius','Trackbars',130,500,changeRadius)
+# # # # # cv.createTrackbar('Focus','Trackbars',1,10,changeFocus)
+
+
+
+# # # # # while True:
+# # # # #     kernel_x=cv.getGaussianKernel(int(col*(0.1*value+1)),radius)
+# # # # #     kernel_y=cv.getGaussianKernel(int(row*(0.1*value+1)),radius)
+# # # # #     kernel=kernel_y*kernel_x.T
+
+
+
+# # # # #     kernel=kernel/np.linalg.norm(kernel)
+# # # # #     mask=255*kernel
+# # # # #     output=np.copy(vige)
+# # # # #     maskim=mask[int(0.1*value*row):,int(0.1*value*col):]
+# # # # #     for i in range(3):
+# # # # #         output[:,:,i]=output[:,:,i]*maskim
+# # # # #     a=cv.resize(output,(512,512))
+# # # # #     cv.imshow("im",a)
+# # # # #     cv.imshow("ik",vige)
+    
+# # # # #     if cv.waitKey(0)==27:
+# # # # #         break
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# # # import os
+# # # print(os.listdir())
+# # import numpy as np
+# # import cv2
+# # from collections import deque
+
+# # #default called trackbar function 
+# # def setValues(x):
+# #    print("")
+
+
+# # # Creating the trackbars needed for adjusting the marker colour
+# # cv2.namedWindow("Color detectors")
+# # cv2.createTrackbar("Upper Hue", "Color detectors", 153, 180,setValues)
+# # cv2.createTrackbar("Upper Saturation", "Color detectors", 255, 255,setValues)
+# # cv2.createTrackbar("Upper Value", "Color detectors", 255, 255,setValues)
+# # cv2.createTrackbar("Lower Hue", "Color detectors", 64, 180,setValues)
+# # cv2.createTrackbar("Lower Saturation", "Color detectors", 72, 255,setValues)
+# # cv2.createTrackbar("Lower Value", "Color detectors", 49, 255,setValues)
+
+
+# # # Giving different arrays to handle colour points of different colour
+# # bpoints = [deque(maxlen=1024)]
+# # gpoints = [deque(maxlen=1024)]
+# # rpoints = [deque(maxlen=1024)]
+# # ypoints = [deque(maxlen=1024)]
+
+# # # These indexes will be used to mark the points in particular arrays of specific colour
+# # blue_index = 0
+# # green_index = 0
+# # red_index = 0
+# # yellow_index = 0
+
+# # #The kernel to be used for dilation purpose 
+# # kernel = np.ones((5,5),np.uint8)
+
+# # colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255), (0, 255, 255)]
+# # colorIndex = 0
+
+# # # Here is code for Canvas setup
+# # paintWindow = np.zeros((471,636,3)) + 255
+# # paintWindow = cv2.rectangle(paintWindow, (40,1), (140,65), (0,0,0), 2)
+# # paintWindow = cv2.rectangle(paintWindow, (160,1), (255,65), colors[0], -1)
+# # paintWindow = cv2.rectangle(paintWindow, (275,1), (370,65), colors[1], -1)
+# # paintWindow = cv2.rectangle(paintWindow, (390,1), (485,65), colors[2], -1)
+# # paintWindow = cv2.rectangle(paintWindow, (505,1), (600,65), colors[3], -1)
+
+# # cv2.putText(paintWindow, "CLEAR", (49, 33), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 2, cv2.LINE_AA)
+# # cv2.putText(paintWindow, "BLUE", (185, 33), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2, cv2.LINE_AA)
+# # cv2.putText(paintWindow, "GREEN", (298, 33), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2, cv2.LINE_AA)
+# # cv2.putText(paintWindow, "RED", (420, 33), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2, cv2.LINE_AA)
+# # cv2.putText(paintWindow, "YELLOW", (520, 33), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (150,150,150), 2, cv2.LINE_AA)
+# # cv2.namedWindow('Paint', cv2.WINDOW_AUTOSIZE)
+
+
+# # # # # # # '''a= 6789
+# # # # # # # a= int(a)
+# # # # # # # print(type(a))
+# # # # # # # print(a+100)'''
+
+# # # # # # # a=34
+# # # # # # # a= str(a)
+
+# # # # # # # print(a+7)
+
+# # # # # # a=input("enter the value of a\n",)
+# # # # # # print(type(a))
+
+# # # # # a=int(input("enter the value of a \n"))
+# # # # # b=int(input("enter the value of b \n"))
+# # # # # print(a+b)
+
+# # # # n=input("input the number\n")
+# # # # n= int(n)
+# # # # z=input("Enter the number\n")
+# # # # z= int(z)
+# # # # # print("the remainder\n", n/z)
+# # # # print("the remainder is \n", n/z)
+
+# # # a=5
+# # # b="pr"
+# # # print(type(a),type(b))
+
+# # a="hello "
+# # b="Pranav"
+# # # c=a+b
+# # # print(c)
+
+# # print(a[1])
+
+# a="pranav"
+# #print(a[1:3])
+
+# # print(len(a))
+# # print(a.endswith("av"))
+# # print(a.count("p"))
+# # print(a.capitalize())
+# # print(a.find("a"))
+
+# # print(a.replace("pranav","Pranav"))
+
+# # a="Good Afternoon "
+# # b=input("input \n")
+# # print(a+b)
+
+# # letter='''Dear <|Name|>,
+# # you are selected!
+
+# # Date: <|Date|>'''
+
+# # name=input("enter your name\n")
+# # date=input("enter the date\n")
+
+# # letter=letter.replace("<|Name|>",name)
+# # letter=letter.replace("<|Date|>",date)
+# # print(letter)
+
+# # st="string with  double spaces"
+# # doublespaces=st.count("  ")
+# # print(doublespaces)
+
+# a=[1,2,3,4,5,6,7,8,9]
+# # a[0]=55
+# # print (a)
+# # a.reverse()
+# # print(a)
+# # b=[44,66,55,77,88,99]
+# # a.append(78)
+# # print(a)
+# # a.append(b)
+# # print(a)
+# # 
+# # a.pop(4)
+# # print(a)
+
+# # tupple
+
+# t1=(1,2,4,5)  
+
+
+# # # # # l1=input("Enter the name of fruit1")
+# # # # # l2=input("Enter the name of fruit2")
+# # # # # l3=input("Enter the name of fruit3")
+# # # # # l4=input("Enter the name of fruit4")
+# # # # # l5=input("Enter the name of fruit5")
+# # # # # l6=input("Enter the name of fruit6")
+# # # # # l7=input("Enter the name of fruit7")
+# # # # # mylist=[l1,l2,l3,l4,l5,l6,l7]
+# # # # # print(mylist)
+
+
+# # # # a1=input("enter the marks of subject 1 ")
+# # # # a2=input("enter the marks of subject 2 ")
+# # # # a3=input("enter the marks of subject 3 ")
+# # # # a4=input("enter the marks of subject 4 ")
+# # # # a5=input("enter the marks of subject 5 ")
+# # # # a6=input("enter the marks of subject 6 ")
+# # # # a7=input("enter the marks of subject 7 ")
+
+# # # # mylis=[a1,a2,a3,a4,a5,a6,a7]
+# # # # mylis.sort()
+# # # # print(mylis)
+
+
+# # # # mydict={
+# # # #     "pranav": "vnit",
+# # # #     "hello": "world"
+# # # # }
+
+# # # # print(mydict['pranav'])
+
+# # # dic={
+# # #     "Pranav": "hello everyone",
+# # #     "Vnit": "College",
+# # #     "pubgpclite": "awsome game",
+# # #     "myanotherdic" : {"Hola pps": "say hello"}
+# # # }
+
+# # # # print(dic['myanotherdic']['Hola pps'])
+
+# # # print(list(dic.items()))
+
+
+
+
+# # a1=int(input("enter the num1"))
+# # a2=int(input("enter the num2"))
+# # a3=int(input("enter the num3"))
+# # a4=int(input("enter the num4"))
+
+# # if(a1>a2):
+# #     print("a1>a2")
+# # elif(a2>a3):
+# #     print("a2>a3")
+# # elif(a3>a4):
+# #     print("a3>a4")
+# # elif(a4>a1):
+# #     print("a4>a1")
+# # else:
+# #     ("every number is equal")
+
+# # i=0
+# # while i<10:
+
+# #     print("Pranav " +str(i))
+
+# #     i=i+1
+
+# # print("done")
+
+# # fruits=["banana","watermelon","orange","mango"]
+
+# # for fruit in fruits:
+# #     print(fruit)
+# # for i in range(2,8):
+# #     print(i)     
+# # a=int(input("Enter the number\n"))
+# # for i in range(0,11):
+# #     print(str(a)+"X"+str(i)+"="+str(a*i))
+
+# # a=int(input("enter the number"))
+# # sum=0
+# # for i in range(0,a+1):
+# #     sum=sum+i
+# # print(f"the sume of {a} is {sum}")
+# # n=int(input("enter the number"))
+
+# # for i in range(0,n+1):
+# # #     print("*"*(i+1))
+
+# # n=int(input("enter the number"))
+# # for j in range(n):
+# #     print(" "*(n-j-1))
+# # for i in range(n+1):
+# #     print("*"*(n+1))
+# # for k in range(2,n+1):
+# #     print("*"*(n+1))
+
+# # n=int(input("enter the number"))
+# # for i in range(10,1):
+# #     print(f"the multiplication of {n}X{i}={num*i}")
+
+
+# # def great(n1,n2,n3):
+
+
+
+# # n1=int(input("Enter the First number"))
+# # n2=int(input("Enter the second number"))
+# # n3=int(input("Enter the third number"))
+
+# # print(great(n1,n2,n3))
+
+# # def game(comp,user):
+
+# #     if comp == user:
+# #         return None
+# #     elif comp == 'stone':
+# #         if user == 'scisor':
+# #             return False
+# #         elif user == 'paper':
+# #             return True
+    
+# #     if comp == 'Paper':
+# #         if user == 'stone':
+# #             return False
+# #         elif user == 'scisor':
+# #             return True
+    
+# #     if comp == 'Scisor':
+# #         if user == 'paper':
+# #             return False
+# #         elif user == 'stone':
+# #             return True
+    
+
+# # import random
+
+# # print("computer's turn: stone, paper and scisor")
+# # ranNo=random.randint(1,3)
+# # if ranNo==1:
+# #     comp='stone'
+# # elif ranNo==2:
+# #     comp='paper'
+# # elif ranNo==3:
+# #     comp='scisor'
+
+
+# # user=input("Player's Turn: stone,paper,scisor\n")
+
+# # print(f"computer chooses = {comp}")
+# # print(f"Player chooses = {user}")
+
+# # x=game(comp,user)
+
+# # if x==None:
+# #     print("Tie")
+# # elif x:
+# #     print("you Win")
+# # else :
+# #     print("you loose")
+
+
+# # class Employee:
+# #     company="Google"
+
+# # pranav=Employee()
+# # carry=Employee()
+# # print(pranav.company)
+# # print(carry.company)
+
+
+# # class Programmers():
+# #     company="Microssoft"
+# #     def __init__(self,name,product):
+# #         self.name=name
+# #         self.product=product
+
+# #     def getinfo(self):
+# #         print(f"The name of the programmer is {self.name} and the product is {self.product}")
+
+# # pranav=Programmers("Pranav","Youtube")
+# # xyz=Programmers("xyz","Git")
+# # Programmers.getinfo(xyz)
+
+# # class Calculator:
+# #     work="Root"
+
+# #     def __init__(self, square , cube , n):
+# #         self.square=square
+# #         self.cube=cube
+# #         self.n=n
+
+    
+# #     def square(self,square):
+# #         print(f"The square is {n*n}")
+    
+
+# #     def cube(self,cube):
+# #         print(f"The cube is {n*n*n}")
+
+# # c=Calculator(square,cube)
+# # s=Calculator(squares,cube)
+
+# # Calculator.square(3)
+
+# # class Train:
+# #     work="Ticket Booking"
+# #     def __init__(self,name,fare,seats):
+# #         self.name=name
+# #         self.fare=fare
+# #         self.seats=seats
+# #     def getinfo(self):
+# #         print(f"The name of the train {self.name}")
+# #         print(f"The seats available in the train are {self.seats}")
+# #     def fareinfo(self):
+# #         print(f"The price of the ticket is {self.fare}")
+
+# #     def bookticket(self):
+# #         if(self.seats>0):
+# #             print(f"Your ticket has been booked, your seat number is {self.seats}")
+# #             self.seats=self.seats-1
+# #         else:
+# #             print("Sorry try in Tatkaal")
+
+    
+
+# # intercity=Train("Intercity:9045",90,300)
+# # intercity.getinfo()
+# # intercity.bookticket()
+
+
+# a=input("Enter\n")
+
+# wordcount=len(a.split())
+# c=wordcount
+
+# print(f"word count {c}")
+
+# total=0
+# for i in range(0,len(a)):
+#     if(a[i]!=' '):
+#         total=total+1
+#         b=total
+
+# specchar=0
+# for i in range(0,len(a)):
+#     ch=a[i]
+#     if(a[i].isalpha()):
+#         continue
+#     elif(a[i].isdigit()):
+#         continue
+#     else:
+#         specchar=specchar+1
+# y=b-specchar
+        
+# print(f"letter count1 {b}")
+
+# print(f"letter count after subtracting letter count1 and specchar {y}")
+
+# sentence=0
+# sentence=sentence+a.count('?')+a.count('!')+a.count('.') 
+# print(f"sentence count {sentence}")
+
+# L=(y/c)*100
+# S=(sentence/c)*100
+# print(L)
+# print(S)
+
+# # index=0.0588*L-0.296*S-15.8
+# # print(index)
+
+# # a=input("Enter the first name\n")
+# # b=input("Enter the second name\n")
+# # c=(f"{a} bonds {b}")
+# # print(c)
+# # print(len(c))
+# # i=0
+# # i=int(i)
+
+# # for i in range(0,len(c)):
+# #     if(a[i]==a[i]):
+# #         break
+# #         i=i+1
+
+        
+    
+# # print(i)
+
+# # # # # import cv2 as cv
+# # # # # import numpy as np
+
+# # # # # img=cv.imread("python/norway-3840x2160-4k-hd-wallpaper-blue-sunset-sea-ocean-water-sky-856.jpg")
+# # # # # img.item(10,10,2)
+# # # # # img.itemset((10,10,2),100)
+# # # # # a=img.item(10,10,2)
+# # # # # print(a)
+
+
+
+# # # # import cv2 as cv
+# # # # import numpy as np
+
+# # # # img=cv.imread("python\WhatsApp Image 2021-08-25 at 7.20.21 PM.jpeg")
+# # # # kernel = np.ones((5,5),np.uint8)
+# # # # dilaion = cv.dilate(img,kernel,iterations = 5)
+# # # # cv.imshow("dilation",dilaion)
+# # # # cv.waitKey(0)
+
+
+
+# # # import numpy as np
+# # # from numpy.lib.function_base import median
+# # # from numpy.lib.type_check import imag
+
+# # # # prints version
+# # # print(np.__version__)
+
+
+# # # arr=np.array([2,3,4])
+# # # print(arr)
+# # # arr1=np.array([[2],[3],[4]])
+# # # print(arr1)
+
+
+
+# # # dimmension2=np.array([(1,2,3),(4,5,6)])
+# # # print(dimmension2)
+# # # dimmension2s=np.array([[2,3,4],[4,5,6]])
+# # # print(dimmension2s)
+# # # dimmension2s3=np.array([[[2,3,4],[4,5,6]]])
+# # # print(dimmension2s3)
+# # # dimmension3=np.array([[[2,3,4],[4,5,6]],[[2,3,4],[4,5,6]],[[2,3,4],[4,5,6]]])
+# # # print(dimmension3)
+# # # zero=np.zeros((3,3),dtype=np.uint8)
+# # # print(zero)
+# # # print(np.ones((3,3),dtype=np.uint8))
+# # # print(np.full((5,5),5))
+# # # diagonal=np.eye(4)
+# # # print(diagonal)
+# # # print(np.arange(0,10,2))
+# # # print(np.linspace(0,2,9))
+# # # print((np.random.rand(2,3))*255)
+
+
+
+# # # arrrr=np.array([(2,3,4),(9,0,0)])
+# # # arrrr2=np.array([[2,3,4],[4,5,6]])
+# # # arrrrrrrrr=arrrr+arrrr2
+# # # print(arrrrrrrrr)
+
+
+
+# # # arrrrrrrrrr=np.array([[1,2,3],[2,3,4]])
+# # # print(arrrrrrrrrr[0][1])
+# # # print(arrrrrrrrrr[1,1])
+# # # ar1=np.array([[2,3,4],[4,5,6],[4,5,6]])
+# # # print(ar1[:,0])
+# # # reshapppppee=arrrrrrrrrr.reshape(1,6)
+# # # print(reshapppppee)
+
+
+
+
+# # # # resizeee=cv.resize(img,None,fx=2,fy=2,interpolation=cv.INTER_LINEAR)
+# # # # mat=np.float32([[1,0,100],[0,1,100]])
+# # # # tran=cv.warpAffine(img,mat,(img.shape[0]+10,img.shape[1]+10))
+# # # # h=img.shape[0]
+# # # # w=img.shape[1]
+# # # # matr=cv.getRotationMatrix2D((h/2,w/2),10,0.5)
+# # # # rot=cv.warpAffine(img,matr,None)
+# # # # kernel=np.ones((3,3),dtype=np.uint8)/9
+# # # # blur=cv.filter2D(img,24,kernel)
+# # # # kernelbluring=np.ones((3,3),dtype=np.uint8)/9
+# # # # blurr=cv.filter2D(img,-1,kernelbluring)
+
+
+# # # # cv.imshow("blur",blurr)
+
+# # # # cv.imshow("b",blur)
+# # # # cv.imshow("imm",rot)
+# # # # cv.imshow("im",tran)
+# # # # cv.imshow("fr",resizeee)
+# # # # cv.waitKey(0)
+
+
+
+# # # import cv2 as cv
+# # # import numpy as np
+# # # from matplotlib import pyplot as plt
+
+# # # img=cv.imread("python\Ashley-Greene.jpg")
+# # # originalimage=cv.cvtColor(img,cv.COLOR_BGR2RGB)
+# # # imgg=cv.cvtColor(img,cv.COLOR_BGR2GRAY)
+# # # sobelx=cv.Sobel(imgg,-1,1,0)
+# # # sobely=cv.Sobel(imgg,-1,0,1)
+# # # sobel=cv.addWeighted(sobelx,0.5,sobely,0.5,0)
+# # # laplacian=cv.Laplacian(imgg,-1)
+# # # laplacian=np.uint8(np.absolute(laplacian))
+# # # canny=cv.Canny(imgg,80,120)
+# # # images=[originalimage,sobelx,sobely,sobel,laplacian,canny]
+# # # titles=["original Image","sobelx","sobely","sobel","laplacian","canny"]
+
+# # # for i in range(6):
+# # #     plt.subplot(3,3,i+1),plt.imshow(images[i],"gray")
+# # #     plt.title(titles[i])
+# # #     plt.xticks()
+# # #     plt.yticks()
+# # # plt.show()
+
+
+
+# # # # # # # # import cv2 as cv
+
+# # # # # # # # # img=cv.imread('python\maxresdefault.jpg')
+# # # # # # # # # cv.imshow('Mario',img)
+# # # # # # # # # cv.waitKey(90000)
+
+# # # # # # # # capture=cv.VideoCapture('python\YouCut_20210215_231626466.mp4')
+
+# # # # # # # # while True:
+# # # # # # # #     isTrue, frame=capture.read()
+# # # # # # # #     cv.imshow('Video',frame)
+# # # # # # # #     if cv.waitKey(200000) or 0xFF==ord('d'):
+# # # # # # # #         break
+# # # # # # # # capture.release()
+# # # # # # # # cv.destroyAllWindows()
+
+
+# # # # # # # # cv.waitKey(0)
+
+
+# # # # # # # # import cv2 as cv
+
+# # # # # # # # import numpy as np
+# # # # # # # # blank=np.zeros((500,500,3),dtype='uint8')
+# # # # # # # # cv.imshow('blank',blank)
+# # # # # # # # cv.rectangle(blank,(0,0),(400,400),(255,0,0))
+# # # # # # # # cv.imshow('blank',blank)
+# # # # # # # # # img=cv.imread('python\space_stars_sky_night_116649_800x600.jpg')
+# # # # # # # # # cv.imshow('img',img)
+# # # # # # # # blank[300:400,300:400]=255,0,0
+# # # # # # # # cv.imshow('red',blank)
+# # # # # # # # cv.waitKey(89999)
+
+
+
+# # # # # # # # import cv2 as cv
+
+# # # # # # # # im=cv.imread('python\space-ship-3-icon.png')
+# # # # # # # # print(im.shape)
+# # # # # # # # # cv.imshow('img',im)
+# # # # # # # # # cv.waitKey(90000)
+
+# # # # # # # # img=cv.resize(im,(400,400))
+# # # # # # # # cv.imshow('img',img)
+# # # # # # # # cv.waitKey(9000)
+
+
+
+# # # # # # # # import cv2 as cv
+# # # # # # # # import numpy as np
+
+# # # # # # # # img=cv.imread('python\space_starry_sky_stars_165890_800x600.jpg')
+# # # # # # # # # cv.imshow('img',img)
+# # # # # # # # # cv.waitKey(900000)
+
+# # # # # # # # new=cv.resize(img,(200,400))
+# # # # # # # # cv.imshow('img',new)
+
+# # # # # # # # img2=img[0:200,200:400]
+# # # # # # # # cv.imshow('img',img2)
+# # # # # # # # cv.waitKey(90000)
+
+
+# # # # # # # # blank=np.zeros((500,500,3),dtype='uint8')
+# # # # # # # # blank[200:300,300:500]=0,255,0
+# # # # # # # # cv.rectangle(blank,(200,200),(300,300),(255,0,0),thickness=-1)
+# # # # # # # # cv.circle(blank,(100,100),20,(0,0,255))
+# # # # # # # # cv.line(blank,(250,250),(450,255),(0,0,255),thickness=2)
+# # # # # # # # cv.putText(blank,'Hello My name is Pranav',(0,250),cv.FONT_HERSHEY_DUPLEX,1.0,(0,255,255))
+# # # # # # # # cv.imshow('img',blank)
+# # # # # # # # cv.waitKey(9000)
+
+
+# # # # # # # # import cv2 as cv
+# # # # # # # # import numpy as np
+
+# # # # # # # # img=cv.imread('python\space_starry_sky_stars_165890_800x600.jpg')
+# # # # # # # # cv.imshow('img',img)
+
+# # # # # # # # gray=cv.cvtColor(img,cv.COLOR_BGR2GRAY)
+# # # # # # # # bg=cv.imshow('img',gray)
+# # # # # # # # print(img.shape)
+# # # # # # # # cv.rectangle(img,(100,100),(150,150),(0,0,255),thickness=-1)
+# # # # # # # # cv.imshow('bg',bg)
+# # # # # # # # cv.waitKey(90000)
+
+
+
+# # # # # # # # img=cv.imread('python\space-game-background-neon-night-alien-landscape_107791-1624.jpg',)
+# # # # # # # # cv.imshow('img',img)
+# # # # # # # # gray=cv.cvtColor(img,cv.COLOR_BGR2GRAY)
+# # # # # # # # cv.imshow('gray',gray)
+# # # # # # # # cv.waitKey(900000)
+
+
+
+# # # # # # # # import cv2 as cv
+
+# # # # # # # # img=cv.imread('python\Canyon.jpg',-1)
+# # # # # # # # print(img)
+# # # # # # # # cv.imshow('img',img)
+# # # # # # # # resize=cv.resize(img,(400,400))
+# # # # # # # # cv.imshow('resize',resize)
+# # # # # # # # cv.waitKey(90000)
+# # # # # # # # cv.destroyAllWindows
+
+
+# # # # # # # # import cv2 as cv
+# # # # # # # # img=cv.imread('python\Canyon.jpg')
+# # # # # # # # cv.imshow('img',img)
+# # # # # # # # k=cv.waitKey(0)
+
+# # # # # # # # if k==27:
+# # # # # # # #     cv.destroyAllWindows
+
+# # # # # # # # elif k==ord('s'):
+    
+
+# # # # # # # #     cv.imwrite('canyoncopy.jpg',img)
+
+
+
+
+# # # # # # # import cv2 as cv
+
+# # # # # # # cap=cv.VideoCapture(0)
+
+# # # # # # # cv.waitKey(0)
+
+
+
+# # # # # # # while True:
+# # # # # # #     ret,frame=cap.read()
+
+# # # # # # #     gray=cv.cvtColor(frame,cv.COLOR_BGR2GRAY)
+# # # # # # #     cv.imshow('gg',gray)
+
+# # # # # # #     if cv.waitKey(1) and 0XFF==ord('s'):
+# # # # # # #         break
+
+# # # # # # # cap.release()
+# # # # # # # cv.destroyAllWindows()
+
+
+
+# # # # # # import cv2 as cv
+# # # # # # import datetime
+
+# # # # # # img=cv.VideoCapture(0)
+# # # # # # print(img.get(cv.CAP_PROP_FRAME_WIDTH))
+# # # # # # print(img.get(cv.CAP_PROP_FRAME_HEIGHT))
+# # # # # # img.set(3,3000)
+# # # # # # img.set(4,3000)
+# # # # # # print(img.get(3))
+# # # # # # print(img.get(4))
+
+
+# # # # # # while (img.isOpened()):
+# # # # # #     ret,frame=img.read()
+# # # # # #     if ret==True:
+
+# # # # # #         text='width '+ str(img.get(3)) + 'height ' + str(img.get(4))
+# # # # # #         font=cv.FONT_HERSHEY_SIMPLEX
+# # # # # #         datet=str(datetime.datetime.now())
+# # # # # #         frame=cv.putText(frame,datet,(20,20),font,1,(0,0,255),2)
+# # # # # #         cv.imshow('frame',frame)
+
+# # # # # #         if cv.waitKey(1) & 0xFF==ord('q'):
+# # # # # #             break
+
+# # # # # #     else:
+# # # # # #         break
+
+# # # # # # img.release()
+# # # # # # cv.destroyAllWindows()
+
+
+# # # # # # import cv2 as cv
+
+# # # # # # img=cv.VideoCapture(0)
+# # # # # # print(img.get(cv.CAP_PROP_FRAME_WIDTH))
+# # # # # # print(img.get(cv.CAP_PROP_FRAME_HEIGHT))
+
+# # # # # # img.set(3,720)
+# # # # # # img.set(4,720)
+
+# # # # # # cv.waitKey(0)
+# # # # # # while True:
+# # # # # #     ret,frame=img.read()
+# # # # # #     if ret==True:
+
+
+# # # # # #         gray=cv.cvtColor(frame,cv.COLOR_BGR2GRAY)
+# # # # # #         cv.imshow('i',gray)
+
+# # # # # #         if cv.waitKey(1) or 0xFF==ord('q'):
+# # # # # #             break
+
+# # # # # #     else :
+# # # # # #         break
+
+
+# # # # # # img.release()
+# # # # # # cv.destroyAllWindows()
+
+
+# # # # # import cv2 as cv
+# # # # # import datetime
+
+# # # # # img=cv.VideoCapture(0)
+
+# # # # # print(img.get(cv.CAP_PROP_FRAME_WIDTH))
+# # # # # print(img.get(cv.CAP_PROP_FRAME_HEIGHT))
+# # # # # img.set(3,3000)
+# # # # # img.set(4,3000)
+# # # # # print(img.get(3))
+# # # # # print(img.get(4))
+
+# # # # # while (img.isOpened()):
+# # # # #     ret,frame=img.read()
+
+# # # # #     if ret == True:
+
+# # # # #         font=cv.FONT_HERSHEY_COMPLEX
+
+# # # # #         datet=str(datetime.datetime.now())
+
+# # # # #         gray=cv.cvtColor(frame,cv.COLOR_BGR2GRAY)
+# # # # #         gray=cv.putText(gray,datet,(20,20),font,1,(0,0,255),2)
+# # # # #         cv.imshow('frame',gray)
+
+# # # # #         if cv.waitKey(1) & 0xFF==ord('q'):
+# # # # #             break
+
+
+# # # # #     else:
+# # # # #         break
+
+
+
+# # # # # img.release()
+# # # # # cv.destroyAllWindows()
+
+
+
+
+# # # # import cv2 as cv
+# # # # import numpy as np
+
+# # # # # events= [i for i in dir(cv) if 'EVENT' in i]
+# # # # # print(events)
+
+
+# # # # def clickevent(event,x,y,flags,param):
+# # # #     if event==cv.EVENT_LBUTTONDOWN:
+# # # #         print(x,y)
+    
+# # # import cv2 as cv
+# # # import numpy as np
+
+# # # img1=np.array((500,500,3))
+# # # img1=cv.rectangle(img1,(150,0),(250,250),(255,255,255),-1)
+# # # img2=cv.imread('python\images (1).png')
+
+
+# # # bitand=cv.bitwise_and(img1,img2)
+# # # cv.imshow('bitwise',bitand)
+# # # cv.waitKey(0)
+# # # cv.destroyAllWindows
+
+
+
+# # import cv2 as cv
+# # import numpy as np
+
+# # # events=[i for i in dir(cv) if 'EVENT'in i]
+# # # print(events)
+
+# # def mousecall(event,x,y,flags,parameter):
+# #     if event==cv.EVENT_LBUTTONDOWN:
+# #         # cv.circle(img,(x,y),3,(0,0,255),-1)
+# #         # points.append((x,y))
+# #         # if len(points)>=2:
+# #         #     cv.line(img,points[-1],points[-2],(0,0,255),2)
+# #         blue=img[x,y,0]
+# #         green=img[x,y,1]
+# #         red=img[x,y,2]
+# #         cv.circle(img,(x,y),3,(0,0,255),-1)
+
+# #         mycolr=np.zeros((512,512,3),np.uint8)
+
+
+# #         mycolr[:]=[blue,green,red]
+
+
+
+
+
+
+# #         # print(x,y)
+
+# #         # font=cv.FONT_HERSHEY_COMPLEX
+# #         # text=str(x) + ',' + str(y)
+# #         # cv.putText(img,text,(x,y),font,.5,(0,0,255))
+# #         cv.imshow('image',img)    
+# #     # if event==cv.EVENT_RBUTTONDOWN:
+# #         # blue=img[y,x,0]
+# #         # green=img[y,x,1]
+# #         # red=img[y,x,2]
+# #         # font=cv.FONT_HERSHEY_COMPLEX
+# #         # bgr=str(blue) + ',' + str(green)+ ',' + str(red)
+# #         # cv.putText(img,text,(x,y),font,.5,(0,255,255))
+# #         # cv.imshow('image',img)
+
+
+       
+# # # img=np.zeros((512,512,3),np.uint8)
+# # img=cv.imread('python\mysterious-galaxy-background-green-tone_79603-574.jpg')
+# # cv.imshow('image',img)
+# # points=[]
+# # cv.setMouseCallback('image',mousecall)
+
+# # cv.waitKey(0)
+# # cv.destroyAllWindows()
+
+
+
+# import cv2 as cv
+
+# def mousecl(event,x,y,flags,param):
+#     if event == cv.EVENT_LBUTTONDOWN:
+#         print(x,y)
+#         text= str(x)+ ","+ str(y)
+#         font=cv.FONT_HERSHEY_COMPLEX
+#         cv.putText(img,text,(x,y),font,1,(0,0,255))
+#         cv.imshow('img',img)
+
+#     if event==cv.EVENT_RBUTTONDBLCLK:
+#         blue=img[x,y,0]
+#         green=img[x,y,1]
+#         red=img[x,y,2]
+
+
+#     img=cv.imread('python\space-game-background_131928-19.jpg')
+# cv.imshow('img',img)
+# cv.setMouseCallback('img',mousecl)
+# cv.waitKey(0)
+# cv.destroyAllWindows()
+
+# import cv2 as cv
+# import numpy as np
+
+
+# def nothing(x):
+#     print(x)
+
+
+# img=np.zeros((512,512,3),dtype=np.uint8)
+# cv.namedWindow('image')
+
+
+# cv.createTrackbar('B','image',0,255,nothing)
+# cv.createTrackbar('G','image',0,255,nothing)
+# cv.createTrackbar('R','image',0,255,nothing)
+
+
+# while True:
+#     cv.imshow('image',img)
+#     k=cv.waitKey(1) & 0xff
+#     if k==27:
+#         break
+
+#     b=cv.getTrackbarPos('B','image')
+#     g=cv.getTrackbarPos('G','image')
+#     r=cv.getTrackbarPos('R','image')
+
+
+#     img[:]=[b,g,r]
+
+# cv.destroyAllWindows()
+
+def s(a):
+    b=str(input(a))
+    c=b[::a]
+    return c
+    print(c)    
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # import cv2 as cv
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # import numpy as np
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # img=cv.imread("python\png-transparent-sprite-spacecraft-pixel-art-spaceship-computer-graphics-spacecraft-design-shooter-game (1).png",0)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("img", img)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # print(img)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.waitKey(9000)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.destroyAllWindows()
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cap=cv.VideoCapture(0)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # while(1):
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     ret, frame=cap.read()
+
+    
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     gray=cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     cv.imshow("Frame", gray)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     if cv.waitKey((1)) & 0xFF==ord('q'):
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         break
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cap.release()
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.destroyAllWindows()
+
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cap=cv.VideoCapture(0)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # while(1):
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     ret, frame=cap.read()
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     gray=cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     cv.imshow("frame", gray)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     if cv.waitKey(1) & 0xFF==ord('q'):
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         break
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cap.release()
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.destroyAllWindows()
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # img=np.zeros([512,512,3],np.uint8)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # img=cv.imread("python\Canyon.jpg")
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # print(img)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # img=cv.line(img, (30,30), (255,255), (255,0,0),5)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # img=cv.arrowedLine(img, (56,56), (200,200), (255,0,0),1)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # img=cv.rectangle(img, (25,25), (300,300), (255,0,0),1)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # img=cv.putText(img, "Opencv", (300,300), cv.FONT_HERSHEY_COMPLEX, 1, (0,0,255),1,cv.LINE_AA)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("img", img)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.waitKey()
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.destroyAllWindows()
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cap=cv.VideoCapture(0)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # while(1):
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     ret,frame=cap.read()
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     if ret==True:
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         gray=cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         cv.imshow("gray", gray)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         if cv.waitKey(1) & 0xff==ord('q'):
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #                 break
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     else:
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         break
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cap.release()
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.destroyAllWindows()
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cap=cv.VideoCapture(0)
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # print(cap.get(cv.CAP_PROP_FRAME_WIDTH))
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # print(cap.get(cv.CAP_PROP_FRAME_HEIGHT))
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cap.set(3,1208)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cap.set(4,720)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # print(cap.get(3))
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # print(cap.get(4))
+ 
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # import datetime
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # while(1):
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     ret,frame=cap.read()
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     if ret==True:
+
+
+
+        
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         gray=cv.cvtColor(frame,cv.COLOR_BGR2GRAY)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         font=cv.FONT_HERSHEY_COMPLEX
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         gray=cv.rectangle(gray,(0,0),(250,250),(255,0,0))
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         text="date:"+ str(datetime.datetime.now())
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         cv.putText(gray,text,(40,40),font,2,(255,0,0))
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         cv.imshow("img",gray)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         if cv.waitKey(1) & 0xFF==ord('q'):
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #             break
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     else:
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         break
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cap.release()
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.destroyAllWindows()
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # import numpy as np
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # events=[i for i in dir(cv) if 'EVENT'in i]
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # print(events)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # events=[i for i in dir(cv)  if 'EVENT' in i]
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # print(events)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # def eventcall(event,x,y,flags,param):
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     if event==cv.EVENT_LBUTTONDOWN:
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         print(x,y)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         coor=str(x) + ',' + str(y)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         font=cv.FONT_HERSHEY_COMPLEX
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         cv.putText(img,coor,(x,y),font,1,(0,0,255))
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         cv.imshow("image",img)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     if event==cv.EVENT_RBUTTONDOWN:
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         blue=img[x,y,0]
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         green=img[x,y,1]
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         red=img[x,y,2]
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         coorBGR=str(blue) + ',' + str(green) + ',' + str(red)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         font=cv.FONT_HERSHEY_COMPLEX
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         cv.putText(img,coorBGR,(x,y),font,1,(0,0,255))
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         cv.imshow("image",img)
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # img=np.zeros((512,512,3),np.uint8)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # img=cv.imread("python\mysterious-galaxy-background-green-tone_79603-574.jpg")
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("image",img)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.setMouseCallback("image",eventcall)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.waitKey(0)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.destroyAllWindows()
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # def eventcall(event,x,y,flags,param):
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     if event==cv.EVENT_LBUTTONDOWN:
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         print(x,y)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         cv.circle(img,(x,y),3,(0,0,255),-1)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         points.append((x,y))
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         if len(points)>=2:
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #             cv.line(img,points[-1],points[-2],(0,0,255))
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         cv.imshow("image",img)
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # img=np.zeros((512,512,3),np.uint8)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # img=cv.imread("python\mysterious-galaxy-background-green-tone_79603-574.jpg")
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("image",img)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # points=[]
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.setMouseCallback("image",eventcall)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.waitKey(0)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.destroyAllWindows
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # def eventcall(event,x,y,flags,param):
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     if event==cv.EVENT_LBUTTONDOWN:
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         blue=img[x,y,0]
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         green=img[x,y,1]
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         red=img[x,y,2]
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         cv.circle(img,(x,y),3,(0,0,255),-1)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         colorimage=np.zeros((512,512,3),np.uint8)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         colorimage[:]=[blue,green,red]
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         cv.imshow("Color",colorimage)
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # img=cv.imread("python\Canyon.jpg")
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("img",img)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.setMouseCallback("image",eventcall)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.waitKey(0)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.destroyAllWindows()
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # def nothing(y):
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     print(y)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # img=np.zeros((512,512,3),np.uint8)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.namedWindow("IMG")
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.createTrackbar("B","IMG",0,255,nothing)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.createTrackbar("G","IMG",0,255,nothing)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.createTrackbar("R","IMG",0,255,nothing)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # switch= "1 on /n 0:off"
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.createTrackbar(switch,"IMG",0,1,nothing)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # while(1):
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     cv.imshow("IMG",img)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     k=cv.waitKey(1) & 0xff
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     if k==27:
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         break
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     b=cv.getTrackbarPos("B","IMG")
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     g=cv.getTrackbarPos("G","IMG")
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     r=cv.getTrackbarPos("R","IMG")
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     s=cv.getTrackbarPos(switch,"IMG")
+
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     if s==0:
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         img[:]=0
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     else:
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         img[:]=[b,g,r]
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.destroyAllWindows()
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # img=cv.imread("python\Canyon.jpg")
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("img",img)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # ret,thresold=cv.threshold(img,127,255,cv.THRESH_TRUNC)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("thre",thresold)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.waitKey(0)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.destroyAllWindows()
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # from matplotlib import pyplot as plt
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # img=cv.imread("python\Canyon.jpg",0)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # thr=cv.adaptiveThreshold(img,255,cv.ADAPTIVE_THRESH_GAUSSIAN_C,cv.THRESH_BINARY,11,2)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("thr",thr)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # plt.imread("python\Canyon.jpg")
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # plt.imshow(img)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # plt.show()
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.waitKey(0)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.destroyAllWindows()
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # from matplotlib import pyplot as plt
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # kernal=np.ones((2,2),np.uint8)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # img=cv.imread("python\Canyon.jpg",cv.IMREAD_GRAYSCALE)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # ret,thre=cv.threshold(img,220,255,cv.THRESH_BINARY)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # mg=cv.morphologyEx(img,cv.MORPH_GRADIENT,kernal,iterations=2)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("image",img)
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # images=[img,thre,mg]
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # titles=['image',"THRESH BINARY","MORPHO"]
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # for i in range(3):
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     plt.subplot(1,3,i+1),plt.imshow(images[i],'gray')
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     plt.title(titles[i])
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     plt.xticks([])
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     plt.yticks([])
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # plt.imshow(img)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # plt.show()
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.waitKey(0)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.destroyAllWindows()
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # from matplotlib import pyplot as plt
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # kernal=np.ones((9,9),np.float32)/81
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # img=cv.imread("canyoncopy.jpg")
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.cvtColor(img,cv.COLOR_BGR2RGB)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # hjn=cv.blur(img,(5,5))
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # im=cv.filter2D(img,-1,kernal)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # images=[img,im,hjn]
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # titles=["IMG","JK","b"]
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # for i in range(3):
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     plt.subplot(1,3,i+1),plt.imshow(images[i],'gray')
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     plt.title(titles[i])
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     plt.xticks([])
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     plt.yticks([])
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # plt.show()
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.waitKey(0)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.destroyAllWindows()
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # import numpy as np
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # img=np.zeros((512,512,3),np.uint8)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # def nothing(x):
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     print(x)
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.createTrackbar("B","img",0,255,nothing)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.createTrackbar("G","img",0,255,nothing)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.createTrackbar("R","img",0,255,nothing)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # while(1):
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     cv.imshow("img",img)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     k=cv.waitKey(1) & 0xFF
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     if k==27:
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         break
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     b=cv.getTrackbarPos("B",img)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     g=cv.getTrackbarPos("G",img)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     r=cv.getTrackbarPos("R",img)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     img[:]=[b,g,r]
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.waitKey(0)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.destroyAllWindows()
+
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # from matplotlib import pyplot as plt
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # img=cv.imread("canyoncopy.jpg")
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # img1=cv.imread("python\spa.jpg")
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # img3=cv.cvtColor(img1,cv.COLOR_BGR2RGB)
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # imgaes=[img,img1,img3]
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # title=["t1","t2","t"]
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # for i in range(3):
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     plt.subplot(1,3,i+1),plt.imshow(imgaes[i],'gray')
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     plt.title(title[i])
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     plt.xticks([])
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     plt.yticks([])
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # plt.show()
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.waitKey(0)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.destroyAllWindows()
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # from matplotlib import pyplot as plt
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # import cv2 as cv
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # import numpy as np
+
+
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # img=cv.imread("python\download (1).png")
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # img=cv.cvtColor(img,cv.COLOR_BGR2RGB)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # kernal=np.ones((2,2),np.uint8)/4
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # imgg=cv.filter2D(img,-1,kernal)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # blur=cv.blur(img,(5,5))
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # blur1=cv.GaussianBlur(img,(5,5),0)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # ddd=cv.medianBlur(img,5)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # eee=cv.bilateralFilter(img,9,75,75)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # laplacian=cv.Laplacian(img,cv.CV_64F,ksize=3)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # np.uint8(np.absolute(laplacian))
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # sobelx=cv.Sobel(img,cv.CV_64F,1,0)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # sobely=cv.Sobel(img,cv.CV_64F,0,1)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # sobelx=np.uint8(np.absolute(sobelx))
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # sobely=np.uint8(np.absolute(sobely))
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # sobelcombined=cv.bitwise_and(sobelx,sobely)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cann=cv.Canny(img,100,200)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # image=[img,imgg,blur,blur1,ddd,eee,laplacian,sobelx,sobely,sobelcombined,cann]
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # title=["img","imgg","imggg","blur1","ddd","eee","Laplacian","sobelx","sobely","sobelcombined","can"]
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # for i in range (11):
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     plt.subplot(3,5,i+1)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     plt.imshow(image[i])
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     plt.title(title[i])
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     plt.xticks([])
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     plt.yticks([])
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # plt.show()
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.waitKey()
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.destroyAllWindows()
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # import cv2 as cv
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # import numpy as np
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # img=cv.imread("canyoncopy.jpg")
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("img",img)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.waitKey(0)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.destroyAllWindows()
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # from matplotlib import pyplot as plt
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # import numpy as np
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # import cv2 as cv
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # img=cv.imread("canyoncopy.jpg")
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # ret,th1=cv.threshold(img,120,255,cv.THRESH_BINARY)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # ret,th2=cv.threshold(img,120,255,cv.THRESH_BINARY_INV)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # ret,th3=cv.threshold(img,120,255,cv.THRESH_TRUNC)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # ret,th4=cv.threshold(img,120,255,cv.THRESH_MASK)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # ret,th5=cv.threshold(img,120,255,cv.THRESH_TOZERO_INV)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("thi1",th1)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("thi2",th2)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("thi3",th3)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("thi4",th4)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("thi5",th5)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("img",img)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.waitKey(0)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.destroyAllWindows()
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # from matplotlib import pyplot as plt
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # import cv2 as cv
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # img=cv.imread("canyoncopy.jpg",0)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # th1=cv.adaptiveThreshold(img,255,cv.ADAPTIVE_THRESH_MEAN_C,cv.THRESH_BINARY,11,2)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # th2=cv.adaptiveThreshold(img,255,cv.ADAPTIVE_THRESH_GAUSSIAN_C,cv.THRESH_BINARY,11,2)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("img2",th1)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("img",img)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("img3",th2)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.waitKey(0)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.destroyAllWindows()
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # from matplotlib import image, pyplot as plt
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # import cv2 as cv
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # import numpy as np
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # img=cv.imread("canyoncopy.jpg",cv.IMREAD_GRAYSCALE)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # mask=cv.Laplacian(img,cv.CV_64F)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # mask=np.uint8(np.absolute(mask))
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # ret,mask=cv.threshold(img,120,255,cv.THRESH_BINARY)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # kernal=np.ones((2,2),np.uint8)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # erosion=cv.erode(img,kernal,iterations=2)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # dilation=cv.dilate(img,kernal,iterations=3)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # titles=["title","img1"]
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # images=[img,mask]
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # for i in range(2):
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     plt.subplot(1,2,i+1),plt.imshow(images[i])
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     plt.xticks([])
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     plt.yticks([])
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     plt.title(titles[i])
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # plt.show()
+
+
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # from matplotlib import pyplot as plt
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # import cv2 as cv
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # import numpy as  np
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # img=cv.imread("canyoncopy.jpg",0)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # lap=cv.Laplacian(img,cv.CV_64F)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # lap=np.uint8(np.absolute(lap))
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # img2=cv.imread("python\kisspng-red-x-x-mark-computer-icons-clip-art-red-x-png-5ab19105d9ebc7.5641284615215864378926.jpg")
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # lap2=cv.Laplacian(img2,cv.CV_64F,ksize=9)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # lap2=np.uint8(np.absolute(lap2))
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # sobelx=cv.Sobel(img,cv.CV_64F,1,0)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # sobely=cv.Sobel(img,cv.CV_64F,0,1)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # sobelx=np.uint8(np.absolute(sobelx))
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # sobely=np.uint8(np.absolute(sobely))
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # sobelx2=cv.Sobel(img2,cv.CV_64F,1,0)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # sobely2=cv.Sobel(img2,cv.CV_64F,0,1)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # sobelx2=np.uint8(np.absolute(sobelx2))
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # sobely2=np.uint8(np.absolute(sobely2))
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # sobelcombined=cv.bitwise_or(sobelx,sobely)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # images=[img,lap,img2,lap2,sobelx,sobely,sobelcombined,sobelx2,sobely2]
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # titles=["title","lap","img2","lap2","sobelx","sobely","sobelcombined","sobelx2","sobely2"]
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # for i in range (9):
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     plt.subplot(3,3,i+1),plt.imshow(images[i])
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     plt.title(titles[i])
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     plt.xticks([])
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     plt.yticks([])
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # plt.show()
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # from matplotlib import pyplot as plt
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # import cv2 as cv
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # import numpy as np
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # img=cv.imread("python\sudoku-original.jpg",0)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # canny=cv.Canny(img,100,200)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # imahes=[img,canny]
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # titles=["title","canny"]
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # for i in range (2):
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     plt.subplot(2,1,i+1),plt.imshow(imahes[i])
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     plt.title(titles[i])
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     plt.xticks([])
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     plt.yticks([])
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # plt.show()
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # import cv2 as cv
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # import numpy as np
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # img=cv.imread("python\sudoku-original.jpg")
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # lr1=cv.pyrDown(img)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # lr2=cv.pyrDown(lr1)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # up2=cv.pyrUp(img)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # layer=img.copy()
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # images=[layer]
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # img2=cv.imread("python\sudoku-original.jpg")
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # for i in range (6):
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     layer=cv.pyrDown(layer)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     images.append(layer)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     cv.imshow(str(i),layer)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("img",img)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("lr",lr2)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("up",up2)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.waitKey(0)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.destroyAllWindows()
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # import cv2 as cv
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # img=cv.imread("python\sudoku-original.jpg")
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # imgray=cv.cvtColor(img,cv.COLOR_BGR2GRAY)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # ret,thres=cv.threshold(imgray,120,255,0)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # countours,hirachy=cv.findContours(thres,cv.RETR_TREE,cv.CHAIN_APPROX_NONE)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.drawContours(img,countours,-1,(0,255,0),3)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("img",img)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("imgray",imgray)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.waitKey(0)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.destroyAllWindows(0)
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # import numpy as np
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # import cv2 as cv
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # img=np.zeros((300,512,3),np.uint8)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.namedWindow("img")
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # def nothing(x):
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     print (x)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.createTrackbar("B","img",0,255,nothing)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.createTrackbar("G","img",0,255,nothing)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.createTrackbar("R","img",0,255,nothing)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # while(1):
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     cv.imshow("img",img)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     k=cv.waitKey(1) & 0xFF
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     if k==27:
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # #         break
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     b=cv.getTrackbarPos("B","img")
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     g=cv.getTrackbarPos("G","img")
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     r=cv.getTrackbarPos("R","img")
+
+
+   
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # #     img[:]=[b,g,r]
+
+
+
+
+
+
+ 
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.destroyAllWindows()
+  
+
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # from matplotlib import pyplot as plt
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # import cv2 as cv
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # import numpy as np
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # from numpy.lib.function_base import copy
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # img=cv.imread("canyoncopy.jpg")
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # lr1=cv.pyrDown(img)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # layer=img.copy()
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # gb=[layer]
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # for i in range(5):
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # #     layer=cv.pyrDown(layer)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # #     gb.append(layer)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # #     cv.imshow(str(i),layer)
+
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # layer=gb[4]
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # lp=[layer]
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # for i in range(5,0,-1):
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # #     print(i)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # #     gausianextended=cv.pyrUp(gb[i])
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # #     laplacian=cv.subtract(gb[i-1],gausianextended)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # #     cv.imshow(str(i),laplacian)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("img",lr1)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.waitKey(0)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.destroyAllWindows()
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # import cv2 as cv
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # import numpy as np
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # apple = cv.imread("python\istockphoto-184276818-612x612.jpg")
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # orrange=cv.imread("python\istockphoto-185284489-612x612.jpg")
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # print(apple.shape)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # print(orrange.shape)
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # appleorrange=np.hstack((apple[:,:256],orrange[:,:256]))
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("appleorrange",appleorrange)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("apple",apple)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("orrange",orrange)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.waitKey(0)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # cv.destroyAllWindows()
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # import cv2 as cv
+# # # # # # # # # # # # # # # # # # # # # # # # # # # import numpy as np
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # img2=cv.imread("canyoncopy.jpg")
+# # # # # # # # # # # # # # # # # # # # # # # # # # # imgray=cv.cvtColor(img2,cv.COLOR_BGR2GRAY)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # ret,thre=cv.threshold(imgray,120,255,cv.THRESH_BINARY)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # contours,hierachy=cv.findContours(thre,cv.RETR_TREE,cv.CHAIN_APPROX_NONE)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # cv.drawContours(img2,contours,-1,(0,0,255))
+# # # # # # # # # # # # # # # # # # # # # # # # # # # print(str(len(contours)))
+# # # # # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("image",img)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("th1",thre)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("imgray",imgray)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # cv.waitKey(0)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # cv.destroyAllWindows(0)
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # import cv2 as cv
+# # # # # # # # # # # # # # # # # # # # # # # # # # import numpy as np
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # img=cv.imread("python\shapes-basic-color.png")
+# # # # # # # # # # # # # # # # # # # # # # # # # # imgray=cv.cvtColor(img,cv.COLOR_BGR2RGB)
+# # # # # # # # # # # # # # # # # # # # # # # # # # ret,th1=cv.threshold(imgray,120,255,cv.THRESH_BINARY)
+# # # # # # # # # # # # # # # # # # # # # # # # # # countours,hireachy=cv.findContours(th1,cv.RETR_TREE,cv.CHAIN_APPROX_NONE)
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # for contour in countours:
+# # # # # # # # # # # # # # # # # # # # # # # # # #     a=cv.approxPolyDP(contour,0.01*cv.arcLength(contour,True),True)
+# # # # # # # # # # # # # # # # # # # # # # # # # #     cv.drawContours(img,[a],0,(0,0,255),5)
+# # # # # # # # # # # # # # # # # # # # # # # # # #     print( )
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # import numpy as np
+# # # # # # # # # # # # # # # # # # # # # # # # # import cv2 as cv
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # from matplotlib import pyplot as plt
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # img=np.zeros((200,200),np.uint8)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # img=cv.imread("canyoncopy.jpg" )
+# # # # # # # # # # # # # # # # # # # # # # # # # # b,g,r=cv.split(img)
+# # # # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("b",b)
+# # # # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("g",b)
+# # # # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("r",r)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # plt.hist(img.ravel(),256,[0,256])
+# # # # # # # # # # # # # # # # # # # # # # # # # # plt.hist(b.ravel(),256,[0,256])
+# # # # # # # # # # # # # # # # # # # # # # # # # # plt.hist(g.ravel(),256,[0,256])
+# # # # # # # # # # # # # # # # # # # # # # # # # # plt.hist(r.ravel(),256,[0,256])
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # his=cv.calcHist([img],[2],None,[256],[0,256])
+# # # # # # # # # # # # # # # # # # # # # # # # # plt.plot(his)
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # plt.show()
+# # # # # # # # # # # # # # # # # # # # # # # # # cv.waitKey(0)
+# # # # # # # # # # # # # # # # # # # # # # # # # cv.destroyAllWindows()
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # import numpy as np
+# # # # # # # # # # # # # # # # # # # # # # # # import cv2 as cv
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # img=cv.imread("python\lionel-messi-barcelona.jpg")
+# # # # # # # # # # # # # # # # # # # # # # # # gray=cv.cvtColor(img,cv.COLOR_BGR2GRAY)
+# # # # # # # # # # # # # # # # # # # # # # # # img1=cv.imread("python\WhatsApp Image 2021-06-02 at 5.15.41 PM.jpeg",0)
+# # # # # # # # # # # # # # # # # # # # # # # # w,h=img1.shape[::-1]
+
+# # # # # # # # # # # # # # # # # # # # # # # # res=cv.matchTemplate(gray,img1,cv.TM_CCOEFF_NORMED)
+# # # # # # # # # # # # # # # # # # # # # # # # print(res)
+# # # # # # # # # # # # # # # # # # # # # # # # thresold=0.9
+# # # # # # # # # # # # # # # # # # # # # # # # loc=np.where(res>= thresold)
+# # # # # # # # # # # # # # # # # # # # # # # # print(loc)
+
+# # # # # # # # # # # # # # # # # # # # # # # # for pt in zip(*loc[::-1]):
+# # # # # # # # # # # # # # # # # # # # # # # #     cv.rectangle(img,pt,(pt[0]+w,pt[1]+h),(0,0,255))
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("img1",img1)
+# # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("img",img)
+# # # # # # # # # # # # # # # # # # # # # # # # cv.waitKey(0)
+# # # # # # # # # # # # # # # # # # # # # # # # cv.destroyAllWindows()
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # import cv2 as cv
+# # # # # # # # # # # # # # # # # # # # # # # # import numpy as np
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # img2=cv.IMREAD_UNCHANGED("python\mysterious-galaxy-background-green-tone_79603-574.jpg")
+# # # # # # # # # # # # # # # # # # # # # # # # img1=cv.IMREAD_GRAYSCALE("python\mysterious-galaxy-background-green-tone_79603-574.jpg")
+
+# # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("img1",img1)
+# # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("img",img)
+# # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("img2",img2)
+
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # for i in range(5):
+# # # # # # # # # # # # # # # # # # # # # # #     # cv.imshow(str(img[i]),img)
+
+
+
+
+
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # img=cv.imread("python\mysterious-galaxy-background-green-tone_79603-574.jpg")
+# # # # # # # # # # # # # # # # # # # # # # # # cv.namedWindow("image",cv.WINDOW_NORMAL)
+# # # # # # # # # # # # # # # # # # # # # # # # cv.imshow("image",img)
+
+# # # # # # # # # # # # # # # # # # # # # # # # cv.imwrite("absc",img)
+
+# # # # # # # # # # # # # # # # # # # # # # # img=cv.imread("python\80300-637491275762439075-16x9.jpg")
+# # # # # # # # # # # # # # # # # # # # # # # cv.imshow("img",img)
+
+# # # # # # # # # # # # # # # # # # # # # # # k=cv.waitKey(0) & 0xff
+
+# # # # # # # # # # # # # # # # # # # # # # # if k==27:
+# # # # # # # # # # # # # # # # # # # # # # #     cv.destroyAllWindows()
+# # # # # # # # # # # # # # # # # # # # # # # elif k==ord('s'):
+# # # # # # # # # # # # # # # # # # # # # # #     cv.imwrite("msg",img)
+# # # # # # # # # # # # # # # # # # # # # # #     cv.destroyAllWindows()
+
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # from matplotlib import pyplot as plt
+
+# # # # # # # # # # # # # # # # # # # # # # img=cv.imread("python\shapes-basic-color.png",0)
+
+# # # # # # # # # # # # # # # # # # # # # # plt.imshow(img,cmap='gray',interpolation='bicubic')
+# # # # # # # # # # # # # # # # # # # # # # plt.xticks([])
+# # # # # # # # # # # # # # # # # # # # # # plt.yticks([])
+# # # # # # # # # # # # # # # # # # # # # # plt.show()
+
+
+
+# # # # # # # # # # # # # # # # # # # # # import cv2 as cv
+# # # # # # # # # # # # # # # # # # # # # import numpy as np
+
+
+# # # # # # # # # # # # # # # # # # # # # # img=cv.VideoCapture(0)
+
+# # # # # # # # # # # # # # # # # # # # # # while True:
+# # # # # # # # # # # # # # # # # # # # # #     ret,frame=img.read()
+# # # # # # # # # # # # # # # # # # # # # #     gray=cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
+
+# # # # # # # # # # # # # # # # # # # # # #     cv.imshow("frame",gray)
+# # # # # # # # # # # # # # # # # # # # # #     if cv.waitKey(500) & 0xFF==ord('q'):
+# # # # # # # # # # # # # # # # # # # # # #         break
+# # # # # # # # # # # # # # # # # # # # # # img.release()
+# # # # # # # # # # # # # # # # # # # # # # cv.destroyAllWindows()
+
+
+
+
+# # # # # # # # # # # # # # # # # # # # # img=cv.VideoCapture(0)
+
+# # # # # # # # # # # # # # # # # # # # # while True:
+# # # # # # # # # # # # # # # # # # # # #     ret,frame=img.read()
+# # # # # # # # # # # # # # # # # # # # #     cv.imshow("frame",frame)
+# # # # # # # # # # # # # # # # # # # # #     k=cv.waitKey(1) & 0xFF==ord('q')
+# # # # # # # # # # # # # # # # # # # # #     if k==27:
+# # # # # # # # # # # # # # # # # # # # #         cv.destroyAllWindows()
+# # # # # # # # # # # # # # # # # # # # #         break
+
+# # # # # # # # # # # # # # # # # # # # # img.release()
+# # # # # # # # # # # # # # # # # # # # # cv.destroyAllWindows()
+
+
+
+# # # # # # # # # # # # # # # # # # # # import cv2 as cv
+# # # # # # # # # # # # # # # # # # # # import numpy as np
+
+# # # # # # # # # # # # # # # # # # # # img=np.zeros((512,512,3),np.uint8)
+
+# # # # # # # # # # # # # # # # # # # # cv.circle(img,(447,63),63,(255,0,0),2)
+# # # # # # # # # # # # # # # # # # # # cv.line(img,(2,2),(255,255),(255,0,0))
+# # # # # # # # # # # # # # # # # # # # cv.ellipse(img,(255,255),(100,50),0,0,180,255,-1)
+# # # # # # # # # # # # # # # # # # # # pts=np.array([[10,5],[20,30],[70,50],[50,10]],np.int32)
+# # # # # # # # # # # # # # # # # # # # pts=pts.reshape((-1,1,2))
+# # # # # # # # # # # # # # # # # # # # img=cv.polylines(img,[pts],True,(255,0,0))
+# # # # # # # # # # # # # # # # # # # # cv.imshow("img",img)
+# # # # # # # # # # # # # # # # # # # # cv.waitKey(0)
+# # # # # # # # # # # # # # # # # # # # cv.destroyAllWindows()
+
+
+# # # # # # # # # # # # # # # # # # # import cv2 as cv
+# # # # # # # # # # # # # # # # # # # import numpy as np
+
+
+
+# # # # # # # # # # # # # # # # # # # events=[i for i in dir(cv) if 'EVENT' in i]
+# # # # # # # # # # # # # # # # # # # print(events)
+
+
+
+# # # # # # # # # # # # # # # # # # # def drawcircle(event,x,y,flags,param):
+# # # # # # # # # # # # # # # # # # #     if event==cv.EVENT_LBUTTONDBLCLK:
+# # # # # # # # # # # # # # # # # # #         cv.circle(img,(x,y),5,(255,0,0),1)
+
+# # # # # # # # # # # # # # # # # # # img=np.zeros((512,512,3),np.uint8)
+
+# # # # # # # # # # # # # # # # # # # cv.namedWindow("imgage")
+# # # # # # # # # # # # # # # # # # # cv.setMouseCallback('image',drawcircle)
+
+# # # # # # # # # # # # # # # # # # # while True:
+# # # # # # # # # # # # # # # # # # #     cv.imshow("image",img)
+# # # # # # # # # # # # # # # # # # #     if cv.waitKey(20) & 0xFF==27:
+# # # # # # # # # # # # # # # # # # #         break
+
+
+
+# # # # # # # # # # # # # # # # # # # cv.destroyAllWindows()
+
+# # # # # # # # # # # # # # # # # # import cv2 as cv
+# # # # # # # # # # # # # # # # # # import numpy as np
+
+
+# # # # # # # # # # # # # # # # # # def nothing(x):
+# # # # # # # # # # # # # # # # # #     print(x)
+
+
+# # # # # # # # # # # # # # # # # # img=np.zeros((512,512,3))
+
+
+
+# # # # # # # # # # # # # # # # # # cv.createTrackbar("B","image",0,255,nothing)
+# # # # # # # # # # # # # # # # # # cv.createTrackbar("G","image",0,255,nothing)
+# # # # # # # # # # # # # # # # # # cv.createTrackbar("R","image",0,255,nothing)
+
+
+# # # # # # # # # # # # # # # # # # while True:
+# # # # # # # # # # # # # # # # # #     cv.imshow("image",img)
+# # # # # # # # # # # # # # # # # #     k=cv.waitKey(1) & 0xFF
+# # # # # # # # # # # # # # # # # #     if k==27:
+# # # # # # # # # # # # # # # # # #         break
+
+
+# # # # # # # # # # # # # # # # # #     r=cv.getTrackbarPos("R","image")
+# # # # # # # # # # # # # # # # # #     g=cv.getTrackbarPos("G","image")
+# # # # # # # # # # # # # # # # # #     b=cv.getTrackbarPos("B","image")
+
+
+
+# # # # # # # # # # # # # # # # # #     img[:]=[b,g,r]
+
+# # # # # # # # # # # # # # # # # # cv.destroyAllWindows()
+
+
+
+# # # # # # # # # # # # # # # # # import cv2 as cv
+# # # # # # # # # # # # # # # # # import numpy as np
+
+
+
+# # # # # # # # # # # # # # # # # img=cv.imread("canyoncopy.jpg")
+
+# # # # # # # # # # # # # # # # # px=img[100,100]
+# # # # # # # # # # # # # # # # # print (px)
+
+# # # # # # # # # # # # # # # # # blue=img[100,100,1]
+
+# # # # # # # # # # # # # # # # # print (blue)
+
+
+# # # # # # # # # # # # # # # # # img[100,100]=[255,255,255]
+# # # # # # # # # # # # # # # # # print (img[100,100])
+
+# # # # # # # # # # # # # # # # # b,g,r=cv.split(img)
+# # # # # # # # # # # # # # # # # cv.imshow("b",b)
+# # # # # # # # # # # # # # # # # cv.imshow("g",g)
+# # # # # # # # # # # # # # # # # cv.imshow("r",r)
+
+
+# # # # # # # # # # # # # # # # # def nothing(x):
+# # # # # # # # # # # # # # # # #     print(x)
+
+
+# # # # # # # # # # # # # # # # # cap=cv.VideoCapture(0)
+# # # # # # # # # # # # # # # # # while(1):
+# # # # # # # # # # # # # # # # #     ret,frame=cap.read()
+# # # # # # # # # # # # # # # # #     hsc=cv.cvtColor(frame,cv.COLOR_BGR2HSV)
+
+# # # # # # # # # # # # # # # # #     lowerblue=np.array([110,50,50])
+# # # # # # # # # # # # # # # # #     upperblue=np.array([130,255,255])
+
+
+
+# # # # # # # # # # # # # # # # #     mask=cv.inRange(hsc,lowerblue,upperblue)
+
+# # # # # # # # # # # # # # # # #     res=cv.bitwise_and(frame,frame,mask=mask)
+
+# # # # # # # # # # # # # # # # #     cv.imshow("frame",frame)
+# # # # # # # # # # # # # # # # #     cv.imshow("mask",mask)
+# # # # # # # # # # # # # # # # #     cv.imshow("res",res)
+# # # # # # # # # # # # # # # # #     k=cv.waitKey(5) & 0xFF
+# # # # # # # # # # # # # # # # #     if k==27:
+# # # # # # # # # # # # # # # # #         break
+
+
+# # # # # # # # # # # # # # # # # cv.createTrackbar("LB",frame,0,255,nothing)
+
+
+# # # # # # # # # # # # # # # # # cv.createTrackbar("HB",frame,0,255,nothing)
+
+
+# # # # # # # # # # # # # # # # # hb=cv.getTrackbarPos("hb","frame")
+# # # # # # # # # # # # # # # # # lb=cv.getTrackbarPos("lb","frame")
+
+
+# # # # # # # # # # # # # # # # # frame[:]=[hb,lb]
+
+
+# # # # # # # # # # # # # # # # # cv.imshow(frame,"frame")
+# # # # # # # # # # # # # # # # # cv.destroyAllWindows()
+
+
+# # # # # # # # # # # # # # # # import cv2 as cv
+# # # # # # # # # # # # # # # # import numpy as np
+# # # # # # # # # # # # # # # # from matplotlib import pyplot as plt
+
+
+# # # # # # # # # # # # # # # # img=cv.imread("canyoncopy.jpg",0)
+
+# # # # # # # # # # # # # # # # ret,thre=cv.threshold(img,120,255,cv.THRESH_BINARY)
+
+
+# # # # # # # # # # # # # # # # imga=[img,thre]
+# # # # # # # # # # # # # # # # titles=["img","thre"]
+
+
+# # # # # # # # # # # # # # # # for i in range(2):
+# # # # # # # # # # # # # # # #     plt.subplot(1,2,i+1),plt.imshow(imga[i])
+# # # # # # # # # # # # # # # #     plt.title([titles[i]])
+# # # # # # # # # # # # # # # #     plt.xticks([])
+# # # # # # # # # # # # # # # #     plt.yticks([])
+
+
+
+
+# # # # # # # # # # # # # # # # plt.show()
+
+
+# # # # # # # # # # # # # # # # # cv.imshow("thresh",thre)
+# # # # # # # # # # # # # # # # # cv.waitKey(0)
+# # # # # # # # # # # # # # # # # cv.destroyAllWindows()
+
+
+
+# # # # # # # # # # # # # # # import cv2 as cv
+# # # # # # # # # # # # # # # import numpy as np
+# # # # # # # # # # # # # # # from matplotlib import pyplot as plt
+
+
+# # # # # # # # # # # # # # # img=cv.imread("canyoncopy.jpg",0)
+# # # # # # # # # # # # # # # img=cv.medianBlur(img,25)
+# # # # # # # # # # # # # # # cv.imshow("K",img)
+# # # # # # # # # # # # # # # cv.waitKey(0)
+# # # # # # # # # # # # # # # cv.destroyAllWindows()
+
+
+
+# # # # # # # # # # # # # # import cv2 as cv
+# # # # # # # # # # # # # # import numpy as np
+
+# # # # # # # # # # # # # # cap=cv.VideoCapture(0)
+
+# # # # # # # # # # # # # # while 1:
+# # # # # # # # # # # # # #     ret,frame=cap.read()
+# # # # # # # # # # # # # #     cv.cvtColor(frame,cv.COLOR_BGR2HSV)
+
+
+# # # # # # # # # # # # # #     lb=np.array([110,50,50])
+# # # # # # # # # # # # # #     up=np.array([130,255,255])
+
+# # # # # # # # # # # # # #     mask=cv.inRange(frame,lb,up)
+
+# # # # # # # # # # # # # #     res=cv.bitwise_and(frame,frame,mask=mask)
+
+
+# # # # # # # # # # # # # #     cv.imshow("frame",frame)
+# # # # # # # # # # # # # #     cv.imshow("mask",mask)
+# # # # # # # # # # # # # #     cv.imshow("res",res)
+# # # # # # # # # # # # # #     k=cv.waitKey(1) & 0xFF
+
+# # # # # # # # # # # # # #     if k==27:
+# # # # # # # # # # # # # #         break
+
+
+# # # # # # # # # # # # # # cv.destroyAllWindows()
+
+
+
+# # # # # # # # # # # # # import cv2 as cv
+
+# # # # # # # # # # # # # import numpy as np
+
+# # # # # # # # # # # # # blue=np.uint8([[[255,0,0]]])
+# # # # # # # # # # # # # hsvblue=cv.cvtColor(blue,cv.COLOR_BGR2HSV)
+# # # # # # # # # # # # # print(hsvblue)
+
+
+
+# # # # # # # # # # # # import cv2 as cv
+# # # # # # # # # # # # import numpy as np
+
+# # # # # # # # # # # # img=cv.imread("canyoncopy.jpg",0)
+# # # # # # # # # # # # _,th=cv.threshold(img,120,255,cv.THRESH_BINARY)
+
+# # # # # # # # # # # # cv.imshow("th",th)
+
+# # # # # # # # # # # # th1=cv.adaptiveThreshold(img,255,cv.ADAPTIVE_THRESH_MEAN_C,cv.THRESH_BINARY,11,2)
+# # # # # # # # # # # # cv.imshow("th1",th1)
+# # # # # # # # # # # # th2=cv.adaptiveThreshold(img,255,cv.ADAPTIVE_THRESH_GAUSSIAN_C,cv.THRESH_BINARY,11,2)
+# # # # # # # # # # # # cv.imshow("th2",th2)
+
+
+# # # # # # # # # # # # ret,th4=cv.threshold(img,0,255,cv.THRESH_BINARY+cv.THRESH_OTSU)
+# # # # # # # # # # # # cv.imshow("th4",th4)
+# # # # # # # # # # # # res=cv.resize(img,None,fx=2,fy=2,interpolation=cv.INTER_CUBIC)
+# # # # # # # # # # # # cv.imshow("res",res)
+# # # # # # # # # # # # res2=cv.resize(img,None,fx=2,fy=2,interpolation=cv.INTER_AREA)
+# # # # # # # # # # # # cv.imshow("re2",res2)
+
+# # # # # # # # # # # # height,width=img.shape[:2]
+
+
+
+
+
+# # # # # # # # # # # # cv.waitKey(0)
+# # # # # # # # # # # # cv.destroyAllWindows()
+
+
+
+# # # # # # # # # # # import cv2 as cv
+# # # # # # # # # # # import numpy as np
+
+
+
+# # # # # # # # # # # img=cv.imread("canyoncopy.jpg")
+# # # # # # # # # # # kernal=np.ones((5,5),np.float32)/25
+# # # # # # # # # # # blur=cv.filter2D(img,-1,kernal)
+
+# # # # # # # # # # # blur2=cv.blur(img,(5,5))
+
+
+# # # # # # # # # # # blur3=cv.GaussianBlur(img,(5,5),1)
+
+
+# # # # # # # # # # # blur4=cv.medianBlur(img,5)
+# # # # # # # # # # # cv.imshow("blur4",blur4)
+# # # # # # # # # # # cv.imshow("im3",blur3)
+
+# # # # # # # # # # # cv.imshow("bl",blur2)
+
+# # # # # # # # # # # cv.imshow("img",blur)
+# # # # # # # # # # # cv.waitKey(0)
+# # # # # # # # # # # cv.destroyAllWindows()
+
+
+
+# # # # # # # # # # import cv2 as cv
+# # # # # # # # # # import numpy as np
+
+# # # # # # # # # # kernal=np.ones((5,5),np.float32)/25
+# # # # # # # # # # img=cv.imread("canyoncopy.jpg")
+# # # # # # # # # # k=cv.boxFilter(img,-1,(5,5))
+# # # # # # # # # # img3=cv.GaussianBlur(img,(5,5),0)
+# # # # # # # # # # cv.imshow("k",k)
+# # # # # # # # # # img4=cv.medianBlur(img,5)
+# # # # # # # # # # cv.imshow("img4",img4)
+# # # # # # # # # # img6=cv.bilateralFilter(img,9,75,60)
+# # # # # # # # # # cv.imshow("img6",img6)
+# # # # # # # # # # blur=cv.filter2D(img,-1,kernal)
+# # # # # # # # # # cv.imshow("bl",img3)
+# # # # # # # # # # cv.imshow("blu",blur)
+# # # # # # # # # # cv.waitKey(0)
+# # # # # # # # # # cv.destroyAllWindows()
+
+
+
+# # # # # # # # # import cv2 as cv
+# # # # # # # # # import numpy as np
+
+
+
+
+# # # # # # # # # i=cv.imread("canyoncopy.jpg",0)
+# # # # # # # # # kernal=np.ones((5,5),np.uint8)
+# # # # # # # # # erosion=cv.erode(i,kernal,iterations=1)
+# # # # # # # # # dilation=cv.dilate(i,kernal,iterations=1)
+
+# # # # # # # # # cv.imshow("im",dilation)
+# # # # # # # # # cv.imshow("i",erosion)
+# # # # # # # # # cv.waitKey(0)
+# # # # # # # # # cv.destroyAllWindows()
+
+# # # # # # # # import cv2 as cv
+# # # # # # # # import numpy as np
+
+
+
+# # # # # # # # img=cv.imread("canyoncopy.jpg",0)
+# # # # # # # # edge=cv.Canny(img,100,200)
+# # # # # # # # cv.imshow("img",edge)
+
+# # # # # # # # sobelx=cv.Sobel(img,cv.CV_64F,1,0)
+# # # # # # # # sobelx=np.uint8(np.absolute(sobelx))
+# # # # # # # # cv.imshow("sobelx",sobelx)
+
+
+# # # # # # # # cv.waitKey(0)
+# # # # # # # # cv.destroyAllWindows()
+
+
+
+
+# # # # # # # import cv2 as cv
+# # # # # # # import numpy as np
+
+# # # # # # # img=cv.imread("canyoncopy.jpg")
+# # # # # # # gray=cv.cvtColor(img,cv.COLOR_BGR2GRAY)
+# # # # # # # _,thr=cv.threshold(gray,120,255,cv.THRESH_BINARY)
+# # # # # # # contours,hierachy=cv.findContours(gray,cv.RETR_TREE,cv.CHAIN_APPROX_SIMPLE)
+# # # # # # # print(contours)
+# # # # # # # cnt=contours[0]
+# # # # # # # m=cv.moments(cnt)
+# # # # # # # print(m)
+# # # # # # # cv.drawContours(img,contours,-1,(0,255,0))
+# # # # # # # cv.imshow("thr",thr)
+# # # # # # # cv.imshow("img",img)
+# # # # # # # cv.waitKey(0)
+# # # # # # # cv.destroyAllWindows()
+
+# # # # # # import cv2 as cv
+# # # # # # import numpy as np
+# # # # # # img=cv.imread("canyoncopy.jpg")
+# # # # # # g=cv.cvtColor(img,cv.COLOR_BGR2GRAY)
+# # # # # # g=np.float32(g)
+# # # # # # i=cv.cornerHarris(g,2,3,0.04)
+# # # # # # i=cv.dilate(i,None)
+# # # # # # cv.imshow("d",i)
+# # # # # # cv.waitKey(0)
+# # # # # # cv.destroyAllWindows()
+
+
+
+
+# # # # # import cv2 as cv
+# # # # # import numpy as np
+
+# # # # # img=cv.imread("canyoncopy.jpg")
+# # # # # gray=cv.cvtColor(img,cv.COLOR_BGR2GRAY)
+# # # # # gray=np.float32(gray)
+# # # # # dst=cv.cornerHarris(gray,2,3,0.04)
+# # # # # dst=cv.dilate(dst,None)
+# # # # # cv.imshow("img",dst)
+# # # # # cv.waitKey(0)
+# # # # # cv.destroyAllWindows()
+
+
+
+# # # # import cv2 as cv
+# # # # import numpy as np
+
+# # # # img=cv.imread("canyoncopy.jpg")
+# # # # gray=cv.cvtColor(img,cv.COLOR_BGR2GRAY)
+# # # # sift=cv.SIFT()
+# # # # kp=sift.detect(gray,None)
+# # # # img=cv.drawKeypoints(gray,kp)
+# # # # cv.imshow("img",img)
+# # # # # cv.imwrite("sift",img)
+# # # # cv.waitKey(0)
+# # # # cv.destroyAllWindows()
+
+
+
+# # # import numpy as np
+# # # import cv2
+# # # from matplotlib import pyplot as plt
+# # # img = cv2.imread("canyoncopy.jpg",0)
+# # # # Initiate STAR detector
+# # # orb = cv2.ORB()
+# # # # find the keypoints with ORB
+# # # kp = orb.detect(img,None)
+# # # # compute the descriptors with ORB
+# # # kp, des = orb.compute(img, kp)
+# # # # draw only keypoints location,not size and orientation
+# # # img2 = cv2.drawKeypoints(img,kp,color=(0,255,0), flags=0)
+# # # plt.imshow(img2),plt.show()
+
+
+
+# # import cv2
+# # import numpy as np
+
+# # image_read = cv2.imread('python\lionel-messi-barcelona.jpg',0) 
+# # original_image = np.asarray(image_read)
+# # width , height = 512,512
+# # resize_image = np.zeros(shape=(width,height))
+
+# # for W in range(width):
+# #     for H in range(height):
+# #         new_width = int( W * original_image.shape[0] / width )
+# #         new_height = int( H * original_image.shape[1] / height )
+# #         resize_image[W][H] = original_image[new_width][new_height]
+
+# # print("Resized image size : " , resize_image.shape)
+
+# # cv2.imshow("img",resize_image)
+# # cv2.waitKey(0)
